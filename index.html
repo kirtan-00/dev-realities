@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dev Realities — Verified parcels in Dholera SIR</title>
+<meta name="description" content="Direct-from-owner allocations in Dholera Special Investment Region. Seven title-clear, NA-complete parcels mapped against the official DSIRDA master plan." />
+<meta property="og:title" content="Dev Realities — Verified parcels in Dholera SIR" />
+<meta property="og:description" content="Seven owner-held parcels in India's first planned smart city. Title-clear, NA-complete, mapped against DSIRDA." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23faf9f5'/><circle cx='16' cy='16' r='6' fill='%23a8854a'/><circle cx='16' cy='16' r='10' fill='none' stroke='%23a8854a' stroke-opacity='0.4' stroke-width='1'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --bg:#faf9f5; --bg-2:#f1efea; --bg-3:#ede9e0;
+  --ink:#14141a; --ink-mute:#6e6a62; --ink-faint:#a8a39a;
+  --line:rgba(20,20,26,0.08); --line-strong:rgba(20,20,26,0.18);
+  --accent:#a8854a; --accent-soft:#8a6a30; --accent-tint:rgba(168,133,74,0.08);
+  --residential:#c9a55a; --industrial:#5a5a6e; --it:#4a7a5a; --logistics:#9a7530; --reserved:#5a7894; --water:#5d8294;
+  --ok:#4a8a5a; --warn:#a8703a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:400;letter-spacing:-0.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--accent);color:var(--bg)}
+.serif{font-family:'Fraunces',serif;font-weight:300}
+.mono{font-family:'JetBrains Mono',monospace;font-feature-settings:'tnum' 1, 'lnum' 1}
+img{max-width:100%;display:block}
+button{font-family:inherit}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 40px;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s;background:rgba(250,249,245,0.0);backdrop-filter:blur(0)}
+nav.scrolled{padding:14px 40px;background:rgba(250,249,245,0.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;letter-spacing:-0.02em;color:var(--ink);text-decoration:none}
+.logo span{color:var(--accent);font-weight:500;margin:0 2px}
+.nav-links{display:flex;gap:36px;font-size:13.5px;font-weight:400;color:var(--ink)}
+.nav-links a{color:inherit;text-decoration:none;opacity:0.65;transition:opacity 0.3s;letter-spacing:-0.005em}
+.nav-links a:hover{opacity:1}
+.nav-cta{font-size:13px;color:var(--ink);border:1px solid var(--line-strong);padding:10px 20px;border-radius:100px;text-decoration:none;transition:all 0.3s;letter-spacing:-0.005em;font-weight:500}
+.nav-cta:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* HERO — centered, Playfair, non-italic */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:140px 40px 100px;position:relative;text-align:center}
+.hero-eyebrow{font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:36px;display:inline-flex;align-items:center;gap:14px;font-weight:500}
+.hero-eyebrow::before{content:"";width:36px;height:1px;background:var(--accent)}
+.hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(44px,7.6vw,116px);line-height:1.02;letter-spacing:-0.025em;max-width:18ch;margin:0 auto 40px;color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--accent);font-weight:800}
+.hero-sub{font-size:17px;line-height:1.6;max-width:54ch;margin:0 auto 56px;color:var(--ink-mute);font-weight:400}
+.hero-actions{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--ink);color:var(--bg);padding:18px 32px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;transition:all 0.3s;letter-spacing:-0.005em}
+.btn-primary:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
+.btn-primary svg{transition:transform 0.3s}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-secondary{color:var(--ink);padding:18px 28px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid var(--line-strong);border-radius:100px;transition:all 0.3s;display:inline-flex;align-items:center;gap:10px;background:transparent;cursor:pointer;letter-spacing:-0.005em}
+.btn-secondary:hover{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.hero-meta{position:absolute;bottom:40px;left:40px;right:40px;display:flex;justify-content:space-between;align-items:flex-end;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-mute)}
+.hero-meta .stats{display:flex;gap:56px}
+.hero-meta .stat-num{font-family:'Playfair Display',serif;font-size:30px;color:var(--ink);font-weight:600;letter-spacing:-0.02em;text-transform:none;display:block;margin-bottom:4px}
+
+/* trust strip */
+.trust{padding:38px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--bg-2)}
+.trust-track{display:flex;gap:88px;align-items:center;animation:scroll 60s linear infinite;white-space:nowrap;padding-left:88px}
+.trust-track span{font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-mute);font-weight:600}
+.trust-track .dot{color:var(--accent);font-size:8px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:140px 40px;position:relative}
+.eyebrow{font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:24px;display:flex;align-items:center;gap:12px;font-weight:600}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--accent)}
+.title{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(36px,5.2vw,76px);line-height:1.04;letter-spacing:-0.025em;max-width:18ch;margin-bottom:32px;color:var(--ink)}
+.title em{font-style:italic;color:var(--accent);font-weight:400}
+
+/* THESIS */
+.thesis{display:grid;grid-template-columns:1.05fr 1fr;gap:96px;align-items:start;max-width:1400px;margin:0 auto}
+.thesis-stats{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.thesis-stat{border-top:1px solid var(--line-strong);padding-top:24px}
+.thesis-stat .num{font-family:'Playfair Display',serif;font-size:64px;font-weight:600;letter-spacing:-0.025em;line-height:1;margin-bottom:8px;color:var(--ink)}
+.thesis-stat .num em{font-style:normal;color:var(--accent);font-size:30px;font-weight:600}
+.thesis-stat .label{font-size:12px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.14em;font-weight:500}
+.thesis-copy{font-size:18px;line-height:1.65;color:var(--ink-mute);max-width:50ch;font-weight:400}
+.thesis-copy strong{color:var(--ink);font-weight:500}
+.thesis-copy + .thesis-copy{margin-top:20px}
+
+/* MAP */
+.map-section{padding:80px 0 0 0}
+.map-header{padding:0 40px;max-width:1400px;margin:0 auto 56px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end}
+.map-header .lede{font-size:16px;line-height:1.65;color:var(--ink-mute);max-width:42ch}
+.map-frame{display:grid;grid-template-columns:1fr 420px;height:90vh;min-height:760px;border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);background:var(--bg)}
+.map-canvas-wrap{position:relative;border-right:1px solid var(--line-strong);overflow:hidden;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%)}
+.map-canvas{width:100%;height:100%;display:block}
+.map-overlay-top{position:absolute;top:24px;left:24px;right:24px;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none;z-index:5}
+.map-label{font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-mute);font-weight:600}
+.map-label strong{color:var(--ink);font-weight:600}
+.map-coord{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-mute);text-align:right;line-height:1.7;letter-spacing:0.05em}
+.filter-bar{position:absolute;bottom:24px;left:24px;display:flex;gap:8px;flex-wrap:wrap;pointer-events:auto;z-index:5}
+.chip{background:rgba(250,249,245,0.85);border:1px solid var(--line-strong);color:var(--ink-mute);padding:9px 18px;border-radius:100px;font-size:12px;cursor:pointer;transition:all 0.2s;backdrop-filter:blur(12px);font-weight:500;letter-spacing:-0.005em}
+.chip:hover{color:var(--ink);border-color:var(--ink)}
+.chip.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.legend{position:absolute;bottom:24px;right:24px;display:flex;flex-direction:column;gap:8px;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mute);background:rgba(250,249,245,0.92);backdrop-filter:blur(12px);padding:14px 16px;border:1px solid var(--line);border-radius:6px;font-weight:600}
+.legend-row{display:flex;align-items:center;gap:8px}
+.legend-swatch{width:10px;height:10px;border-radius:2px}
+.tp-zone{transition:opacity 0.4s,fill 0.4s;cursor:default}
+.tp-zone.dim{opacity:0.15}
+.tp-label{fill:rgba(20,20,26,0.55);font-size:10px;font-family:'Inter',sans-serif;font-weight:500;letter-spacing:0.06em;pointer-events:none;text-anchor:middle;text-transform:uppercase}
+.tp-area{fill:rgba(20,20,26,0.32);font-size:8px;font-family:'JetBrains Mono',monospace;pointer-events:none;text-anchor:middle}
+.pin-group{cursor:pointer}
+.pin-pulse{fill:var(--accent);opacity:0.4;animation:pulse 2.6s ease-out infinite}
+.pin-pulse-2{animation-delay:1.3s}
+@keyframes pulse{0%{r:6;opacity:0.55}100%{r:34;opacity:0}}
+.pin-core{fill:var(--accent);stroke:var(--bg);stroke-width:2.5;transition:r 0.3s,fill 0.3s}
+.pin-group:hover .pin-core{r:9;fill:var(--ink)}
+.pin-group.active .pin-core{r:10;fill:var(--ink)}
+.sir-boundary{fill:none;stroke:rgba(168,133,74,0.55);stroke-width:1.5;stroke-dasharray:4 3}
+.sir-fill{fill:rgba(20,20,26,0.018)}
+
+/* PANEL */
+.map-panel{background:var(--bg-2);display:flex;flex-direction:column;overflow:hidden;position:relative}
+.panel-empty{flex:1;display:flex;flex-direction:column;justify-content:center;padding:56px 40px}
+.panel-empty .num{font-family:'Playfair Display',serif;font-size:104px;font-weight:600;letter-spacing:-0.04em;line-height:1;color:var(--accent);margin-bottom:20px}
+.panel-empty h3{font-family:'Fraunces',serif;font-size:30px;font-weight:400;letter-spacing:-0.02em;margin-bottom:18px;line-height:1.1;color:var(--ink)}
+.panel-empty p{color:var(--ink-mute);font-size:14.5px;line-height:1.65;margin-bottom:28px;max-width:34ch}
+.panel-empty .hint{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.18em;font-weight:600}
+.panel-empty .hint::before{content:"";width:24px;height:1px;background:var(--accent)}
+.panel-detail{flex:1;display:none;flex-direction:column;overflow-y:auto}
+.panel-detail.active{display:flex}
+.panel-detail::-webkit-scrollbar{width:4px}
+.panel-detail::-webkit-scrollbar-track{background:transparent}
+.panel-detail::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:2px}
+.panel-img{height:160px;background:linear-gradient(135deg,var(--bg-3) 0%,var(--bg-2) 100%);border-bottom:1px solid var(--line-strong);position:relative;overflow:hidden;flex-shrink:0}
+.panel-img-tag{position:absolute;top:16px;left:16px;background:rgba(250,249,245,0.92);backdrop-filter:blur(8px);padding:6px 14px;border-radius:100px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-soft);border:1px solid rgba(168,133,74,0.3);font-weight:600}
+.panel-img-pattern{position:absolute;inset:0;background-image:linear-gradient(rgba(20,20,26,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,26,0.05) 1px,transparent 1px);background-size:24px 24px;animation:drift 40s linear infinite;opacity:0.6}
+.panel-img-glow{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(168,133,74,0.22) 0%,transparent 70%);bottom:-100px;right:-50px;pointer-events:none}
+@keyframes drift{from{background-position:0 0}to{background-position:240px 240px}}
+.panel-content{padding:32px 32px 28px;flex:1}
+.panel-village{font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:8px;font-weight:600}
+.panel-title{font-family:'Fraunces',serif;font-size:32px;font-weight:400;letter-spacing:-0.02em;line-height:1.08;margin-bottom:24px;color:var(--ink)}
+.panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin-bottom:28px;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.panel-cell{background:var(--bg-2);padding:16px}
+.panel-cell .k{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:6px;font-weight:600}
+.panel-cell .v{font-family:'Fraunces',serif;font-size:18px;font-weight:400;letter-spacing:-0.01em;color:var(--ink)}
+.panel-cell .v.mono{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0}
+
+/* GROWTH CHART */
+.growth{margin-bottom:28px;padding:18px;border:1px solid var(--line-strong);border-radius:6px;background:var(--bg)}
+.growth-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.growth-title{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);font-weight:600}
+.growth-multi{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--accent-soft)}
+.growth-multi em{color:var(--ink-mute);font-style:normal;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500}
+.growth-svg{width:100%;height:80px;display:block}
+.growth-foot{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-faint);text-align:left;letter-spacing:0.05em;margin-top:6px;line-height:1.5}
+
+.panel-list{margin-bottom:24px}
+.panel-list-title{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:12px;font-weight:600}
+.panel-list-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:1px solid var(--line);font-size:13px}
+.panel-list-row:last-child{border-bottom:1px solid var(--line)}
+.panel-list-row .k{color:var(--ink-mute)}
+.panel-list-row .v{color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500}
+.status-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase}
+.status-pill.ok{background:rgba(74,138,90,0.1);color:var(--ok);border:1px solid rgba(74,138,90,0.3)}
+.status-pill.warn{background:rgba(168,112,58,0.1);color:var(--warn);border:1px solid rgba(168,112,58,0.3)}
+.panel-cta{padding:24px 32px 32px;border-top:1px solid var(--line-strong);display:flex;flex-direction:column;gap:10px;background:var(--bg);flex-shrink:0}
+.panel-cta .btn-primary{justify-content:center;width:100%;padding:16px}
+.panel-cta .btn-secondary-sm{background:transparent;color:var(--ink);border:1px solid var(--line-strong);padding:13px;border-radius:100px;font-size:13px;font-weight:500;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:all 0.2s;font-family:inherit;letter-spacing:-0.005em}
+.panel-cta .btn-secondary-sm:hover{border-color:var(--accent);color:var(--accent)}
+.panel-close{position:absolute;top:16px;right:16px;width:30px;height:30px;border-radius:50%;background:rgba(250,249,245,0.9);backdrop-filter:blur(8px);border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);font-size:18px;line-height:1;z-index:10;transition:all 0.2s}
+.panel-close:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* CLASSIC */
+.classic{background:var(--bg-2);border-top:1px solid var(--line)}
+.classic-head{max-width:1400px;margin:0 auto 64px;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:end}
+.classic-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-soft);background:var(--accent-tint);border:1px solid rgba(168,133,74,0.25);padding:7px 14px;border-radius:100px;margin-bottom:20px;font-weight:600}
+.classic-copy{font-size:16px;line-height:1.7;color:var(--ink-mute);max-width:46ch;font-weight:400}
+.classic-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
+.classic-layout{background:var(--bg);border:1px solid var(--line-strong);border-radius:8px;padding:32px;position:relative;overflow:hidden}
+.classic-layout-grid{display:grid;grid-template-columns:repeat(18,1fr);gap:3px;height:380px;align-content:start}
+.classic-plot{background:rgba(168,133,74,0.18);border:1px solid rgba(168,133,74,0.3);border-radius:1px;cursor:pointer;transition:all 0.2s;aspect-ratio:1.4}
+.classic-plot:hover{background:var(--accent);border-color:var(--accent);transform:scale(1.4);z-index:2}
+.classic-plot.med{background:rgba(168,133,74,0.28);aspect-ratio:1.1}
+.classic-plot.lg{background:rgba(168,133,74,0.4);aspect-ratio:0.9;border-color:rgba(168,133,74,0.5)}
+.classic-plot.road{background:rgba(20,20,26,0.04);border:none;cursor:default;pointer-events:none;aspect-ratio:1.4}
+.classic-plot.road:hover{transform:none;background:rgba(20,20,26,0.04)}
+.classic-info{padding:8px 4px}
+.classic-info-row{display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid var(--line);font-size:14px}
+.classic-info-row .k{color:var(--ink-mute)}
+.classic-info-row .v{color:var(--ink);font-family:'Fraunces',serif;font-size:18px;font-weight:400;letter-spacing:-0.01em}
+.classic-info-row .v.mono{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500}
+.classic-amenities{margin-top:24px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;font-size:12px;color:var(--ink-mute)}
+.classic-amenity{display:flex;align-items:center;gap:8px;padding:10px;border:1px solid var(--line);border-radius:4px;background:var(--bg);font-weight:500}
+.classic-amenity::before{content:"";width:5px;height:5px;background:var(--accent);border-radius:50%;flex-shrink:0}
+
+/* OWNER */
+.owner{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.owner-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:380px 1fr;gap:80px;align-items:center}
+.owner-portrait{position:relative;aspect-ratio:1;border-radius:6px;background:linear-gradient(135deg,var(--bg-3) 0%,var(--bg-2) 100%);overflow:hidden;border:1px solid var(--line-strong)}
+.owner-portrait::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(168,133,74,0.22) 0%,transparent 60%)}
+.owner-portrait::after{content:"DC";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:120px;font-weight:600;color:rgba(168,133,74,0.55);letter-spacing:-0.04em}
+.owner-portrait-tag{position:absolute;bottom:20px;left:20px;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;z-index:2}
+.owner-portrait-tag::before{content:"";display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:8px;vertical-align:middle}
+.owner-quote{font-family:'Fraunces',serif;font-size:clamp(26px,3.2vw,40px);font-weight:400;line-height:1.25;letter-spacing:-0.02em;margin-bottom:36px;color:var(--ink)}
+.owner-quote em{font-style:italic;color:var(--accent)}
+.owner-quote::before{content:"\201C";position:absolute;font-size:96px;color:var(--accent);opacity:0.45;margin-left:-44px;margin-top:-30px;font-style:normal;font-family:'Playfair Display',serif}
+.owner-quote-wrap{position:relative}
+.owner-attrib{display:flex;align-items:center;gap:18px;margin-bottom:36px}
+.owner-name{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-0.005em}
+.owner-role{font-size:12px;color:var(--ink-mute);letter-spacing:0.05em;margin-top:2px;font-weight:500}
+.owner-actions{display:flex;gap:14px;flex-wrap:wrap}
+.owner-action{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:500;transition:all 0.3s;letter-spacing:-0.005em}
+.owner-action.wa{background:rgba(74,138,90,0.08);color:var(--ok);border:1px solid rgba(74,138,90,0.3)}
+.owner-action.wa:hover{background:var(--ok);color:#fff;border-color:var(--ok)}
+.owner-action.call{background:transparent;color:var(--ink);border:1px solid var(--line-strong)}
+.owner-action.call:hover{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+
+/* FAQ */
+.faq-wrap{max-width:980px;margin:0 auto}
+.faq-item{border-top:1px solid var(--line-strong);padding:0}
+.faq-item:last-child{border-bottom:1px solid var(--line-strong)}
+.faq-q{padding:28px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:32px;transition:padding-left 0.3s}
+.faq-q:hover{padding-left:8px}
+.faq-q-text{font-family:'Fraunces',serif;font-size:22px;font-weight:400;letter-spacing:-0.015em;line-height:1.3;color:var(--ink)}
+.faq-toggle{width:34px;height:34px;border-radius:50%;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.3s;color:var(--ink-mute);font-size:18px;line-height:1}
+.faq-item.open .faq-toggle{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.5s ease;color:var(--ink-mute);font-size:15.5px;line-height:1.7}
+.faq-a-inner{padding:0 0 28px 0;max-width:64ch}
+.faq-item.open .faq-a{max-height:400px}
+
+/* LEAD */
+.lead{background:var(--bg-2);border-top:1px solid var(--line)}
+.lead-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:96px;align-items:start}
+.lead-form{background:var(--bg);padding:40px;border:1px solid var(--line-strong);border-radius:8px;box-shadow:0 1px 0 rgba(20,20,26,0.02)}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:10px;font-weight:600}
+.field input,.field select,.field textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--line-strong);color:var(--ink);font-family:inherit;font-size:15px;padding:10px 0;font-weight:400;letter-spacing:-0.005em;transition:border-color 0.3s;outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent)}
+.field input::placeholder,.field textarea::placeholder{color:var(--ink-faint)}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 5l3 3 3-3' stroke='%236e6a62' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0 center;background-size:14px;padding-right:24px;cursor:pointer}
+.field select option{background:var(--bg);color:var(--ink)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.lead-form .btn-primary{width:100%;justify-content:center;margin-top:14px;padding:18px}
+.lead-disc{margin-top:18px;font-size:11px;color:var(--ink-faint);text-align:center;line-height:1.6}
+
+/* CONTACT */
+.contact{padding:120px 40px;background:var(--bg)}
+.contact-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.contact-block h4{font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:20px;font-weight:600}
+.contact-block .item{font-family:'Fraunces',serif;font-size:22px;font-weight:400;letter-spacing:-0.015em;line-height:1.4;color:var(--ink)}
+.contact-block .item + .item{margin-top:8px}
+.contact-block .item.mono{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;letter-spacing:0}
+.contact-block a{color:inherit;text-decoration:none;transition:color 0.3s;border-bottom:1px solid transparent}
+.contact-block a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.contact-block .small{font-size:13px;color:var(--ink-mute);line-height:1.7;font-family:'Inter',sans-serif;font-weight:400;letter-spacing:-0.005em}
+
+/* footer */
+footer{padding:64px 40px 32px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-mute);background:var(--bg-2)}
+.footer-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+footer h5{font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink);margin-bottom:18px;font-weight:600}
+footer ul{list-style:none}
+footer li{margin-bottom:8px}
+footer a{color:inherit;text-decoration:none;transition:color 0.2s}
+footer a:hover{color:var(--ink)}
+.footer-brand{font-family:'Playfair Display',serif;font-size:32px;font-weight:600;letter-spacing:-0.02em;color:var(--ink);margin-bottom:14px}
+.footer-brand span{color:var(--accent);font-weight:500}
+.footer-tag{font-size:13px;color:var(--ink-mute);max-width:36ch;line-height:1.65}
+.footer-bottom{max-width:1400px;margin:48px auto 0;border-top:1px solid var(--line);padding-top:28px;display:flex;justify-content:space-between;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;flex-wrap:wrap;gap:16px}
+
+/* responsive */
+@media (max-width:1100px){
+  .map-frame{grid-template-columns:1fr 380px}
+  .classic-grid{grid-template-columns:1fr;gap:32px}
+  .owner-grid{grid-template-columns:280px 1fr;gap:48px}
+  .lead-grid{gap:48px}
+}
+@media (max-width:880px){
+  nav{padding:18px 24px}
+  .nav-links{display:none}
+  .hero{padding:120px 24px 80px}
+  .hero-meta{position:static;margin-top:64px;flex-direction:column;align-items:center;gap:32px;text-align:center}
+  .hero-meta .stats{gap:32px;flex-wrap:wrap;justify-content:center}
+  section{padding:88px 24px}
+  .thesis,.map-header,.classic-head{grid-template-columns:1fr;gap:40px}
+  .map-frame{grid-template-columns:1fr;height:auto}
+  .map-canvas-wrap{height:65vh;min-height:520px;border-right:none;border-bottom:1px solid var(--line-strong)}
+  .map-panel{min-height:auto}
+  .owner-grid{grid-template-columns:1fr;gap:32px}
+  .owner-portrait{max-width:280px}
+  .owner-quote::before{margin-left:0;position:relative;display:block;margin-top:0;line-height:0.5}
+  .lead-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:32px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .legend{display:none}
+  .field-row{grid-template-columns:1fr;gap:0}
+  #faq > div{grid-template-columns:1fr !important;gap:32px !important}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="logo" href="#top">Dev<span>·</span>Realities</a>
+  <div class="nav-links">
+    <a href="#thesis">Thesis</a>
+    <a href="#map">Holdings</a>
+    <a href="#classic">Classic Smart Homes</a>
+    <a href="#owner">Owner</a>
+  </div>
+  <a class="nav-cta" href="#lead">Speak with us</a>
+</nav>
+
+<!-- HERO — centered, Playfair, non-italic bold -->
+<section class="hero" id="top">
+  <div class="hero-eyebrow" data-fade>Dholera SIR · Owner-curated allocations</div>
+  <h1 data-hero>
+    Seven verified parcels.<br>
+    Inside India's first <em>planned</em><br>
+    smart city.
+  </h1>
+  <p class="hero-sub" data-fade>Direct-from-owner allocations in Dholera Special Investment Region — title-clear, NA-complete, and mapped against the official DSIRDA master plan. Held by one principal. Suitable for individual and family-office mandates.</p>
+  <div class="hero-actions" data-fade>
+    <a class="btn-primary" href="#map">
+      View the holdings
+      <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a class="btn-secondary" href="#thesis">Read the thesis</a>
+  </div>
+  <div class="hero-meta">
+    <div class="stats">
+      <div><span class="stat-num">7</span>Verified parcels</div>
+      <div><span class="stat-num">61,304</span>Sq.yd available</div>
+      <div><span class="stat-num">5/7</span>NA-complete</div>
+      <div><span class="stat-num">1</span>Active layout (286 plots)</div>
+    </div>
+    <div>04 / 27 / 2026 · Ahmedabad</div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="trust-track">
+    <span>DSIRDA</span><span class="dot">●</span>
+    <span>Government of Gujarat</span><span class="dot">●</span>
+    <span>DICDL backed</span><span class="dot">●</span>
+    <span>NA Complete</span><span class="dot">●</span>
+    <span>Title verified</span><span class="dot">●</span>
+    <span>Delhi–Mumbai Industrial Corridor</span><span class="dot">●</span>
+    <span>RERA-aligned</span><span class="dot">●</span>
+    <span>DSIRDA</span><span class="dot">●</span>
+    <span>Government of Gujarat</span><span class="dot">●</span>
+    <span>DICDL backed</span><span class="dot">●</span>
+    <span>NA Complete</span><span class="dot">●</span>
+    <span>Title verified</span><span class="dot">●</span>
+    <span>Delhi–Mumbai Industrial Corridor</span><span class="dot">●</span>
+    <span>RERA-aligned</span><span class="dot">●</span>
+  </div>
+</div>
+
+<!-- THESIS -->
+<section id="thesis">
+  <div class="thesis">
+    <div>
+      <div class="eyebrow">The thesis</div>
+      <h2 class="title">A 920 sq&nbsp;km<br>greenfield, planned<br><em>before it was built</em>.</h2>
+    </div>
+    <div>
+      <p class="thesis-copy">Dholera SIR is the first city in India where the master plan came before the city. Roads, utilities, and zoning were notified by DSIRDA before a single building rose. Land was assembled, surveyed, and titled under direct government supervision.</p>
+      <p class="thesis-copy">For an early allocator, the thesis is straightforward: <strong>the city is being built, and we are inside the boundary.</strong> The international airport is under construction. The Ahmedabad–Dholera expressway is open. The MRTS corridor is approved. Each milestone delivered tightens the supply of titled, NA-complete land inside the SIR — and Dev's holdings sit on that supply.</p>
+      <div class="thesis-stats" style="margin-top:48px">
+        <div class="thesis-stat"><div class="num">920<em> sq km</em></div><div class="label">Total planned area</div></div>
+        <div class="thesis-stat"><div class="num">22</div><div class="label">Industrial sectors</div></div>
+        <div class="thesis-stat"><div class="num">27</div><div class="label">TP zones notified</div></div>
+        <div class="thesis-stat"><div class="num">3,000<em> Cr+</em></div><div class="label">Infrastructure committed</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section" id="map">
+  <div class="map-header">
+    <div>
+      <div class="eyebrow">The holdings</div>
+      <h2 class="title">Seven parcels.<br>One <em>master plan</em>.</h2>
+    </div>
+    <div>
+      <p class="lede">Each pin is a real, title-verified parcel. Click to view the survey number, TP zone, NA status, road access, and the indicative growth profile. Filter by use to narrow the set. Pricing is shared on a per-mandate basis.</p>
+    </div>
+  </div>
+  <div class="map-frame">
+    <div class="map-canvas-wrap">
+      <div class="map-overlay-top">
+        <div class="map-label"><strong>Dholera SIR</strong> · DSIRDA Master Plan</div>
+        <div class="map-coord">22°15′N · 72°10′E<br>27 TP zones · 920 sq.km</div>
+      </div>
+      <svg class="map-canvas" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <pattern id="dots" patternUnits="userSpaceOnUse" width="22" height="22">
+            <circle cx="1" cy="1" r="0.6" fill="rgba(20,20,26,0.06)"/>
+          </pattern>
+        </defs>
+        <rect width="800" height="1000" fill="url(#dots)"/>
+
+        <path class="sir-fill" d="M 380 60 L 480 80 L 520 100 L 540 130 L 560 180 L 540 230 L 600 260 L 640 300 L 660 360 L 670 440 L 680 520 L 670 600 L 650 680 L 620 760 L 580 820 L 520 880 L 460 920 L 400 940 L 340 930 L 290 900 L 240 850 L 200 780 L 170 700 L 150 620 L 140 540 L 150 460 L 170 380 L 200 320 L 240 270 L 280 220 L 300 170 L 330 120 Z"/>
+        <path class="sir-boundary" d="M 380 60 L 480 80 L 520 100 L 540 130 L 560 180 L 540 230 L 600 260 L 640 300 L 660 360 L 670 440 L 680 520 L 670 600 L 650 680 L 620 760 L 580 820 L 520 880 L 460 920 L 400 940 L 340 930 L 290 900 L 240 850 L 200 780 L 170 700 L 150 620 L 140 540 L 150 460 L 170 380 L 200 320 L 240 270 L 280 220 L 300 170 L 330 120 Z"/>
+
+        <!-- TP 1 (residential) -->
+        <g class="tp-zone" data-family="residential"><path d="M 380 60 L 480 80 L 520 100 L 510 140 L 460 145 L 400 130 L 380 100 Z" fill="rgba(201,165,90,0.32)" stroke="rgba(168,133,74,0.55)" stroke-width="0.7"/><text class="tp-label" x="445" y="105">TP 1A</text></g>
+        <g class="tp-zone" data-family="residential"><path d="M 510 140 L 540 130 L 560 180 L 540 200 L 480 195 L 460 145 Z" fill="rgba(201,165,90,0.28)" stroke="rgba(168,133,74,0.5)" stroke-width="0.7"/><text class="tp-label" x="510" y="170">TP 1B</text></g>
+        <g class="tp-zone" data-family="residential"><path d="M 380 100 L 400 130 L 460 145 L 480 195 L 380 210 L 320 180 L 320 130 Z" fill="rgba(201,165,90,0.26)" stroke="rgba(168,133,74,0.5)" stroke-width="0.7"/><text class="tp-label" x="395" y="170">TP 1A-3</text></g>
+
+        <!-- TP 2 (knowledge / IT) -->
+        <g class="tp-zone" data-family="it"><path d="M 320 180 L 380 210 L 480 195 L 540 200 L 540 230 L 530 280 L 470 290 L 380 280 L 320 250 Z" fill="rgba(74,122,90,0.28)" stroke="rgba(74,122,90,0.5)" stroke-width="0.7"/><text class="tp-label" x="430" y="248">TP 2B</text></g>
+        <g class="tp-zone" data-family="it"><path d="M 540 230 L 600 260 L 580 320 L 530 280 Z" fill="rgba(74,122,90,0.24)" stroke="rgba(74,122,90,0.45)" stroke-width="0.7"/><text class="tp-label" x="565" y="290">TP 2A</text></g>
+
+        <!-- TP 3 (commercial / mixed) -->
+        <g class="tp-zone" data-family="commercial"><path d="M 200 320 L 240 270 L 280 220 L 320 250 L 320 320 L 270 360 L 210 360 Z" fill="rgba(217,135,108,0.26)" stroke="rgba(190,108,82,0.5)" stroke-width="0.7"/><text class="tp-label" x="265" y="305">TP 3C-1</text></g>
+        <g class="tp-zone" data-family="commercial"><path d="M 170 380 L 210 360 L 270 360 L 290 420 L 250 480 L 180 480 L 150 460 Z" fill="rgba(217,135,108,0.22)" stroke="rgba(190,108,82,0.45)" stroke-width="0.7"/><text class="tp-label" x="225" y="425">TP 3C-2</text><text class="tp-area" x="225" y="445">3,976 ha</text></g>
+        <g class="tp-zone" data-family="commercial"><path d="M 320 320 L 380 280 L 470 290 L 480 360 L 400 380 L 320 360 Z" fill="rgba(217,135,108,0.24)" stroke="rgba(190,108,82,0.45)" stroke-width="0.7"/><text class="tp-label" x="400" y="335">TP 3A</text></g>
+
+        <!-- TP 4 (industrial east) -->
+        <g class="tp-zone" data-family="industrial"><path d="M 480 360 L 530 280 L 580 320 L 600 380 L 560 440 L 480 420 Z" fill="rgba(90,90,110,0.22)" stroke="rgba(60,60,80,0.5)" stroke-width="0.7"/><text class="tp-label" x="540" y="380">TP 4A</text></g>
+        <g class="tp-zone" data-family="industrial"><path d="M 480 420 L 560 440 L 600 380 L 640 420 L 660 540 L 600 580 L 510 560 L 470 500 Z" fill="rgba(90,90,110,0.28)" stroke="rgba(60,60,80,0.55)" stroke-width="0.7"/><text class="tp-label" x="565" y="490">TP 4B-2</text><text class="tp-area" x="565" y="510">4,425 ha</text></g>
+        <g class="tp-zone" data-family="industrial"><path d="M 320 360 L 400 380 L 480 360 L 480 420 L 470 500 L 380 510 L 290 480 L 290 420 Z" fill="rgba(90,90,110,0.22)" stroke="rgba(60,60,80,0.5)" stroke-width="0.7"/><text class="tp-label" x="385" y="445">TP 4B-1</text></g>
+
+        <!-- TP 5 -->
+        <g class="tp-zone" data-family="industrial"><path d="M 150 460 L 180 480 L 250 480 L 290 480 L 290 580 L 230 620 L 160 600 L 140 540 Z" fill="rgba(90,90,110,0.26)" stroke="rgba(60,60,80,0.55)" stroke-width="0.7"/><text class="tp-label" x="215" y="540">TP 5C-1</text><text class="tp-area" x="215" y="560">4,375 ha</text></g>
+        <g class="tp-zone" data-family="industrial"><path d="M 290 480 L 380 510 L 410 580 L 380 640 L 320 660 L 260 640 L 290 580 Z" fill="rgba(90,90,110,0.22)" stroke="rgba(60,60,80,0.5)" stroke-width="0.7"/><text class="tp-label" x="335" y="585">TP 5A</text></g>
+        <g class="tp-zone" data-family="industrial"><path d="M 160 600 L 230 620 L 260 640 L 240 700 L 180 720 L 145 680 Z" fill="rgba(154,117,48,0.22)" stroke="rgba(122,90,30,0.5)" stroke-width="0.7"/><text class="tp-label" x="200" y="665">TP 5C-2</text></g>
+
+        <!-- TP 6 (reserved) -->
+        <g class="tp-zone" data-family="reserved"><path d="M 240 700 L 320 660 L 380 640 L 410 580 L 510 560 L 600 580 L 620 760 L 580 820 L 520 850 L 440 850 L 380 830 L 320 800 L 250 770 Z" fill="rgba(90,120,148,0.22)" stroke="rgba(60,90,120,0.5)" stroke-width="0.7"/><text class="tp-label" x="425" y="720">TP 6B</text><text class="tp-area" x="425" y="740">6,091 ha</text></g>
+        <g class="tp-zone" data-family="reserved"><path d="M 250 770 L 320 800 L 290 850 L 240 850 L 200 820 Z" fill="rgba(90,120,148,0.18)" stroke="rgba(60,90,120,0.45)" stroke-width="0.7"/><text class="tp-label" x="265" y="815">TP 6A</text></g>
+
+        <!-- coastal -->
+        <path d="M 660 360 L 670 440 L 680 520 L 670 600 L 650 680 L 620 760 L 700 740 L 720 600 L 720 460 L 700 380 Z" fill="rgba(93,130,148,0.1)" stroke="rgba(60,100,128,0.3)" stroke-width="0.5"/>
+        <text class="tp-label" x="685" y="560" style="fill:rgba(60,100,128,0.55)">Gulf of Khambhat</text>
+
+        <!-- key infra -->
+        <g opacity="0.75">
+          <line x1="430" y1="85" x2="430" y2="900" stroke="rgba(20,20,26,0.1)" stroke-width="0.7" stroke-dasharray="2 4"/>
+          <text class="tp-area" x="442" y="65" style="text-anchor:start;fill:rgba(20,20,26,0.45)">250m EXPRESSWAY</text>
+          <circle cx="445" cy="100" r="3.5" fill="none" stroke="rgba(168,133,74,0.7)" stroke-width="1"/>
+          <text class="tp-area" x="455" y="103" style="text-anchor:start;fill:rgba(168,133,74,0.85)">Dholera Int'l Airport</text>
+          <circle cx="430" cy="450" r="4" fill="none" stroke="rgba(168,133,74,0.8)" stroke-width="1.2"/>
+          <circle cx="430" cy="450" r="1.7" fill="rgba(168,133,74,1)"/>
+          <text class="tp-area" x="440" y="453" style="text-anchor:start;fill:rgba(168,133,74,0.85)">ABCD Building</text>
+        </g>
+
+        <!-- 7 PINS -->
+        <g class="pin-group" data-id="pipli" tabindex="0"><circle class="pin-pulse" cx="455" cy="155" r="6"/><circle class="pin-pulse pin-pulse-2" cx="455" cy="155" r="6"/><circle class="pin-core" cx="455" cy="155" r="6"/></g>
+        <g class="pin-group" data-id="classic" tabindex="0"><circle class="pin-pulse" cx="478" cy="118" r="6"/><circle class="pin-pulse pin-pulse-2" cx="478" cy="118" r="6"/><circle class="pin-core" cx="478" cy="118" r="6"/></g>
+        <g class="pin-group" data-id="valinda" tabindex="0"><circle class="pin-pulse" cx="400" cy="180" r="6"/><circle class="pin-pulse pin-pulse-2" cx="400" cy="180" r="6"/><circle class="pin-core" cx="400" cy="180" r="6"/></g>
+        <g class="pin-group" data-id="gorasu" tabindex="0"><circle class="pin-pulse" cx="345" cy="170" r="6"/><circle class="pin-pulse pin-pulse-2" cx="345" cy="170" r="6"/><circle class="pin-core" cx="345" cy="170" r="6"/></g>
+        <g class="pin-group" data-id="sodhi" tabindex="0"><circle class="pin-pulse" cx="245" cy="320" r="6"/><circle class="pin-pulse pin-pulse-2" cx="245" cy="320" r="6"/><circle class="pin-core" cx="245" cy="320" r="6"/></g>
+        <g class="pin-group" data-id="sangasar" tabindex="0"><circle class="pin-pulse" cx="220" cy="540" r="6"/><circle class="pin-pulse pin-pulse-2" cx="220" cy="540" r="6"/><circle class="pin-core" cx="220" cy="540" r="6"/></g>
+        <g class="pin-group" data-id="bhangadh" tabindex="0"><circle class="pin-pulse" cx="560" cy="490" r="6"/><circle class="pin-pulse pin-pulse-2" cx="560" cy="490" r="6"/><circle class="pin-core" cx="560" cy="490" r="6"/></g>
+      </svg>
+
+      <div class="filter-bar">
+        <button class="chip active" data-filter="all">All seven</button>
+        <button class="chip" data-filter="residential">Residential</button>
+        <button class="chip" data-filter="industrial">Industrial</button>
+        <button class="chip" data-filter="commercial">Mixed</button>
+        <button class="chip" data-filter="ready">NA-Complete</button>
+      </div>
+
+      <div class="legend">
+        <div class="legend-row"><span class="legend-swatch" style="background:rgba(201,165,90,0.7)"></span>Residential</div>
+        <div class="legend-row"><span class="legend-swatch" style="background:rgba(74,122,90,0.7)"></span>Knowledge / IT</div>
+        <div class="legend-row"><span class="legend-swatch" style="background:rgba(217,135,108,0.7)"></span>Commercial / Mixed</div>
+        <div class="legend-row"><span class="legend-swatch" style="background:rgba(90,90,110,0.7)"></span>Industrial</div>
+        <div class="legend-row"><span class="legend-swatch" style="background:rgba(90,120,148,0.7)"></span>Reserved</div>
+      </div>
+    </div>
+
+    <div class="map-panel">
+      <div class="panel-empty" id="panelEmpty">
+        <div class="num">7</div>
+        <h3>Verified parcels,<br>browseable by zone.</h3>
+        <p>Each pin is a real, title-clear parcel inside Dholera SIR. Select one to view its survey number, TP zone, NA status, road access, distances to the airport and expressway, and an indicative growth profile.</p>
+        <div class="hint">Select a pin to begin</div>
+      </div>
+
+      <div class="panel-detail" id="panelDetail">
+        <div class="panel-img">
+          <button class="panel-close" id="panelClose" aria-label="Close">×</button>
+          <span class="panel-img-tag" id="dTag">Industrial · TP 3C-1</span>
+          <div class="panel-img-pattern"></div>
+          <div class="panel-img-glow"></div>
+        </div>
+        <div class="panel-content">
+          <div class="panel-village" id="dVillage">Sodhi · Taluka Dholera</div>
+          <div class="panel-title" id="dTitle">Survey 712</div>
+          <div class="panel-grid">
+            <div class="panel-cell"><div class="k">Area</div><div class="v" id="dArea">13,613 sq.yd</div></div>
+            <div class="panel-cell"><div class="k">Zone</div><div class="v" id="dZone">Industrial</div></div>
+            <div class="panel-cell"><div class="k">TP Number</div><div class="v mono" id="dTp">3C-1</div></div>
+            <div class="panel-cell"><div class="k">Road access</div><div class="v mono" id="dRoad">18 m</div></div>
+          </div>
+
+          <div class="growth">
+            <div class="growth-head">
+              <div class="growth-title">Indicative growth profile</div>
+              <div class="growth-multi"><span id="dMulti">2.1×</span> <em>2020–26</em></div>
+            </div>
+            <svg class="growth-svg" id="growthSvg" viewBox="0 0 320 80" preserveAspectRatio="none"></svg>
+            <div class="growth-foot" id="dFoot">Indexed 2020 = 100. Indicative range. Not a forecast. Based on regional comparables and DSIRDA delivery dates.</div>
+          </div>
+
+          <div class="panel-list">
+            <div class="panel-list-title">Distance to</div>
+            <div class="panel-list-row" id="dD1"><span class="k">Dholera Int'l Airport</span><span class="v">14 km</span></div>
+            <div class="panel-list-row" id="dD2"><span class="k">Metro / MRTS</span><span class="v">18 km</span></div>
+            <div class="panel-list-row" id="dD3"><span class="k">250m Expressway</span><span class="v">6 km</span></div>
+            <div class="panel-list-row" id="dD4"><span class="k">ABCD Building</span><span class="v">11 km</span></div>
+          </div>
+
+          <div class="panel-list">
+            <div class="panel-list-title">Title & status</div>
+            <div class="panel-list-row"><span class="k">Land remark</span><span id="dStatus" class="status-pill ok">NA Complete</span></div>
+            <div class="panel-list-row"><span class="k">UPIN</span><span class="v" id="dUpin">GJ440825744194</span></div>
+            <div class="panel-list-row"><span class="k">Survey (old)</span><span class="v" id="dOld">106</span></div>
+          </div>
+        </div>
+        <div class="panel-cta">
+          <a class="btn-primary" id="dQuote" href="#lead">Request indicative pricing
+            <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn-secondary-sm" href="#">Download brochure (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASSIC -->
+<section class="classic" id="classic">
+  <div class="classic-head">
+    <div>
+      <div class="classic-tag">● Flagship · Active</div>
+      <h2 class="title">Classic Smart Homes.<br>286 plots, <em>one</em> address.</h2>
+    </div>
+    <div>
+      <p class="classic-copy">Dev's gated residential layout in Pipli, on the Pipli–Dholera highway, one kilometre from the upcoming international airport. NA-complete, internal RCC roads laid, gate and CCTV active, 286 individual plots from 49 to 217 sq.yd. The first inventory inside the SIR's residential corridor that an end-user can move on this year.</p>
+    </div>
+  </div>
+
+  <div class="classic-grid">
+    <div class="classic-layout">
+      <div class="classic-layout-grid" id="classicGrid"></div>
+      <div class="classic-amenities">
+        <div class="classic-amenity">Gated entry · CCTV</div>
+        <div class="classic-amenity">Internal RCC roads</div>
+        <div class="classic-amenity">Street lighting</div>
+        <div class="classic-amenity">Underground electrics</div>
+        <div class="classic-amenity">Children's play area</div>
+        <div class="classic-amenity">Senior-citizen seating</div>
+        <div class="classic-amenity">Party lawn</div>
+        <div class="classic-amenity">Wide entry gate</div>
+      </div>
+    </div>
+
+    <div class="classic-info">
+      <div class="classic-info-row"><span class="k">Site address</span><span class="v">Pipli, Dholera</span></div>
+      <div class="classic-info-row"><span class="k">Total plots</span><span class="v">286</span></div>
+      <div class="classic-info-row"><span class="k">Plot size range</span><span class="v">49 – 217 sq.yd</span></div>
+      <div class="classic-info-row"><span class="k">Land status</span><span class="v mono">NA Complete</span></div>
+      <div class="classic-info-row"><span class="k">Distance to airport</span><span class="v">~ 1 km</span></div>
+      <div class="classic-info-row"><span class="k">Distance to expressway</span><span class="v">~ 1 km</span></div>
+      <div class="classic-info-row"><span class="k">Possession</span><span class="v">Immediate</span></div>
+      <div style="margin-top:32px"><a class="btn-primary" href="#lead">Request layout & price sheet
+        <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a></div>
+    </div>
+  </div>
+</section>
+
+<!-- OWNER -->
+<section class="owner" id="owner">
+  <div class="owner-grid">
+    <div class="owner-portrait">
+      <div class="owner-portrait-tag">The principal</div>
+    </div>
+    <div>
+      <div class="eyebrow">A direct line</div>
+      <div class="owner-quote-wrap">
+        <p class="owner-quote">Land in Dholera SIR is a ten-year decision. The seven parcels here are titled in <em>my</em> name — surveyed, NA-cleared, and registered before they were ever offered. There is no desk between us. When you call, the principal picks up.</p>
+      </div>
+      <div class="owner-attrib">
+        <div>
+          <div class="owner-name">Dev Chaudhary</div>
+          <div class="owner-role">Principal · Chaitanya Real Estate · Dholera SIR</div>
+        </div>
+      </div>
+      <div class="owner-actions">
+        <a class="owner-action wa" href="https://wa.me/917990916271?text=Hello%20Dev%2C%20I%20saw%20your%20Dholera%20holdings%20and%20would%20like%20to%20speak.">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.46 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01zm-7.01 15.24h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23z"/></svg>
+          Message on WhatsApp
+        </a>
+        <a class="owner-action call" href="tel:+917990916271">
+          <svg width="14" height="14" viewBox="0 0 14 14"><path d="M11.6 8.9l-1.5-.6a.7.7 0 0 0-.7.2l-.7.7a8 8 0 0 1-3.4-3.4l.7-.7a.7.7 0 0 0 .2-.7L5.6 2.9a.7.7 0 0 0-.8-.4l-1.4.3a.7.7 0 0 0-.6.7c0 4.5 3.7 8.2 8.2 8.2a.7.7 0 0 0 .7-.6l.3-1.4a.7.7 0 0 0-.4-.8z" fill="currentColor"/></svg>
+          +91 79909 16271
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:96px;align-items:start">
+    <div>
+      <div class="eyebrow">Common questions</div>
+      <h2 class="title">Before you<br><em>commit</em>.</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-text">Are the parcels NA-certified?</div><div class="faq-toggle">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Five of the seven holdings are NA-complete (Sodhi-712, Pipli-338, Valinda-277, Bhangadh-133, and the Classic Smart Homes layout). Two are mid-process (Sangasar-535 and Gorasu-1021); we share the collector's provisional approval letters on request. NA conversion in Dholera SIR is a procedural step inside DSIRDA, not a hurdle.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-text">How does payment & registration work?</div><div class="faq-toggle">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Standard sub-registrar registration in Ahmedabad district. We accept staged payment for parcels above ₹1 crore — typically 20% on agreement, 70% on registration, 10% on possession. Stamp duty and registration are buyer's account, currently 4.9% combined in Gujarat. We provide the title chain, 7/12 record, NA order, and DSIRDA verification before the agreement.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-text">What is the resale liquidity in Dholera?</div><div class="faq-toggle">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Resale liquidity is asymmetric across TP zones. TP-1 (residential, near airport) and TP-4B (industrial, near ABCD Building) move within weeks of listing. Outer TP-3C and TP-5C move on quarters, not weeks. We share zone-level transaction velocity from our own ledger when relevant to your selection.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-text">Who is DSIRDA, and what does that mean for my title?</div><div class="faq-toggle">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">The Dholera Special Investment Regional Development Authority is a body of the Government of Gujarat. It notified the master plan, runs the Town Planning schemes that produced the 27 TP zones, and issues the Final Plot (FP) numbers under which titles are registered. Holdings inside a notified TP carry a stronger legal floor than agricultural land outside the SIR — they are surveyed, fenced, and titled under direct government oversight.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-text">Can NRIs buy?</div><div class="faq-toggle">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes, for residential and mixed-use parcels under the FEMA general permission. Industrial parcels require RBI approval depending on the entity structure; for OCI/PIO holders, the residential route is straightforward. We coordinate documentation with the buyer's CA and a Gujarat-registered conveyancing lawyer.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-text">What is the minimum allocation size?</div><div class="faq-toggle">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Inside Classic Smart Homes, plots start at 49 sq.yd (compact, end-user) — entry tickets begin around ₹15–20 lakh. For the standalone parcels (Sodhi, Sangasar, Bhangadh, etc.), the minimum sale unit is 100 sq.yd per Gujarat regulation, though most allocators take 1,000+ sq.yd given the price-per-sq.yd. Family-office mandates are typically structured between ₹1 cr and ₹5 cr across one or two TPs.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD -->
+<section class="lead" id="lead">
+  <div class="lead-grid">
+    <div>
+      <div class="eyebrow">Speak with us</div>
+      <h2 class="title">Pricing is shared on<br>a <em>per-mandate</em> basis.</h2>
+      <p class="thesis-copy" style="margin-top:24px">Tell us a little about what you're looking for. Dev or his desk will reply within one business day with the relevant title chain, indicative pricing, and a slot for a private viewing — virtual or in person. We don't list prices publicly because each parcel is individually structured. Treat this as the start of a conversation, not an inquiry form.</p>
+    </div>
+    <form class="lead-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Sent ✓';this.querySelector('button').disabled=true">
+      <div class="field-row">
+        <div class="field"><label>Full name</label><input type="text" required placeholder="Your name" /></div>
+        <div class="field"><label>Phone</label><input type="tel" required placeholder="+91 …" /></div>
+      </div>
+      <div class="field"><label>Email</label><input type="email" required placeholder="you@example.com" /></div>
+      <div class="field-row">
+        <div class="field">
+          <label>Allocation size</label>
+          <select>
+            <option>₹20 L – 50 L</option>
+            <option>₹50 L – 1 Cr</option>
+            <option>₹1 – 3 Cr</option>
+            <option>₹3 – 5 Cr</option>
+            <option>₹5 Cr +</option>
+            <option>Open to advisor's view</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Holding interest</label>
+          <select>
+            <option>Residential (Classic / Pipli / Valinda)</option>
+            <option>Industrial (Sodhi / Sangasar / Bhangadh)</option>
+            <option>Strategic (mixed across zones)</option>
+            <option>Open to advisor's view</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label>A note (optional)</label><textarea rows="3" placeholder="Anything specific you'd like Dev to address."></textarea></div>
+      <button class="btn-primary" type="submit">Request a private call
+        <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="lead-disc">By submitting, you agree to be contacted by Dev Realities once. We don't store your data, share it, or add you to lists.</div>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-block">
+      <h4>Direct line</h4>
+      <div class="item mono"><a href="tel:+917990916271">+91 79909 16271</a></div>
+      <div class="item mono"><a href="tel:+919274756271">+91 92747 56271</a></div>
+      <div class="item mono"><a href="tel:+919274816271">+91 92748 16271</a></div>
+      <div class="item mono" style="margin-top:14px"><a href="https://wa.me/917990916271">WhatsApp →</a></div>
+    </div>
+    <div class="contact-block">
+      <h4>Office</h4>
+      <div class="item">A-322, Siddhivinayak Tower</div>
+      <div class="item small">B/h SP Office, Near Katariya Motors,<br>Makarba, Ahmedabad – 380051</div>
+      <div class="item small" style="margin-top:14px"><a href="mailto:chaitanyarealestate6271@gmail.com">chaitanyarealestate6271@gmail.com</a></div>
+    </div>
+    <div class="contact-block">
+      <h4>Site</h4>
+      <div class="item">Pipli</div>
+      <div class="item small">Taluka Dholera, District Ahmedabad – 382465.<br>Off the Ahmedabad–Dholera Expressway, on the Pipli–Dholera highway. Site visits arranged on request.</div>
+      <div class="item small" style="margin-top:14px"><a href="https://maps.google.com/?q=Pipli+Dholera+Ahmedabad" target="_blank" rel="noopener">View on Google Maps →</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Dev<span> · </span>Realities</div>
+      <p class="footer-tag">From confusion to clarity. Owner-curated allocations in India's first planned smart city.</p>
+    </div>
+    <div>
+      <h5>Holdings</h5>
+      <ul>
+        <li><a href="#map">All seven →</a></li>
+        <li><a href="#classic">Classic Smart Homes</a></li>
+        <li><a href="#map">Sodhi · 712</a></li>
+        <li><a href="#map">Bhangadh · 133</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Dholera</h5>
+      <ul>
+        <li><a href="#thesis">The thesis</a></li>
+        <li><a href="https://dholera.gujarat.gov.in/" target="_blank" rel="noopener">DSIRDA →</a></li>
+        <li><a href="#faq">Common questions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+917990916271">+91 79909 16271</a></li>
+        <li><a href="https://wa.me/917990916271">WhatsApp</a></li>
+        <li>Makarba · Ahmedabad</li>
+        <li><a href="#lead">Speak with us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Dev Realities · A Chaitanya Real Estate brand</span>
+    <span>Map: DSIRDA · Schematic, not to scale · For visualisation only</span>
+  </div>
+</footer>
+
+<script>
+const PLOTS = {
+  pipli:    {village:"Pipli · Taluka Dholera",   title:"Survey 338",  area:"5,567 sq.yd",  zone:"Mixed (residential)", tp:"1A",     road:"NA-completed",        family:"residential", status:"NA Complete", statusOk:true, upin:"GJ938195430831", old:"—",       d:["1 km","1 km","1 km","2 km"], tag:"Mixed · TP 1A · Airport-edge", multi:"2.4×",  curve:[100,108,118,135,160,195,238,275,330]},
+  classic:  {village:"Pipli · Classic Smart Homes", title:"286-plot layout", area:"49 – 217 sq.yd",  zone:"Residential (developed)", tp:"1A",   road:"30 m internal", family:"residential", status:"Active project", statusOk:true, upin:"Multiple", old:"—", d:["1 km","1 km","1 km","2 km"], tag:"Residential · Flagship", multi:"2.6×",  curve:[100,110,122,142,170,210,260,305,365]},
+  valinda:  {village:"Valinda · Taluka Dholera", title:"Survey 277",  area:"13,550 sq.yd", zone:"Residential", tp:"1A-3",  road:"Approached",          family:"residential", status:"NA Complete", statusOk:true, upin:"GJ858832504501", old:"—",       d:["2 km","2 km","2 km","3 km"], tag:"Residential · TP 1A-3", multi:"2.0×",  curve:[100,107,116,128,148,175,205,235,275]},
+  gorasu:   {village:"Gorasu · Taluka Dholera",  title:"Survey 1021", area:"1,021 sq.yd",  zone:"Residential", tp:"1A",    road:"Approached",          family:"residential", status:"In review",   statusOk:false, upin:"—",          old:"—",       d:["3 km","3 km","2 km","4 km"], tag:"Residential · TP 1A · In-review", multi:"1.7×",  curve:[100,105,112,122,138,158,180,205,235]},
+  sodhi:    {village:"Sodhi · Taluka Dholera",   title:"Survey 712",  area:"13,613 sq.yd", zone:"Industrial",  tp:"3C-1",  road:"18 m wide",       family:"industrial",  status:"NA Complete", statusOk:true, upin:"GJ440825744194", old:"106",     d:["14 km","18 km","6 km","11 km"], tag:"Industrial · TP 3C-1", multi:"1.9×",  curve:[100,106,114,124,142,165,190,218,250]},
+  sangasar: {village:"Sangasar · Taluka Dholera",title:"Survey 535",  area:"7,619 sq.yd",  zone:"Industrial",  tp:"5C-1",  road:"24 m × 300 m",family:"industrial",  status:"NA in process",statusOk:false,upin:"GJ137614646997", old:"248/1",   d:["18 km","22 km","9 km","15 km"], tag:"Industrial · TP 5C-1", multi:"1.6×",  curve:[100,103,108,116,128,145,162,180,205]},
+  bhangadh: {village:"Bhangadh · Taluka Dholera",title:"Survey 133",  area:"20,328 sq.yd", zone:"Industrial",  tp:"4B-2",  road:"25 × 25 m corner",family:"industrial",status:"NA Ready",   statusOk:true, upin:"—",          old:"—",       d:["12 km","16 km","4 km","8 km"], tag:"Industrial · TP 4B-2 · Corner", multi:"2.2×",  curve:[100,108,118,132,158,190,228,265,310]}
+};
+
+// growth chart on light bg
+function renderGrowth(curve){
+  const svg=document.getElementById('growthSvg');
+  const W=320,H=80,P=4;
+  const max=Math.max(...curve)*1.05;
+  const min=80;
+  const xStep=(W-P*2)/(curve.length-1);
+  const y=v=>H-P-((v-min)/(max-min))*(H-P*2);
+  const x=i=>P+i*xStep;
+  let line=`M ${x(0)} ${y(curve[0])}`;
+  for(let i=1;i<curve.length;i++) line+=` L ${x(i)} ${y(curve[i])}`;
+  let topPath=`M ${x(0)} ${y(curve[0]*1.08)}`;
+  for(let i=1;i<curve.length;i++) topPath+=` L ${x(i)} ${y(curve[i]*1.08)}`;
+  let botPath='';
+  for(let i=curve.length-1;i>=0;i--) botPath+=` L ${x(i)} ${y(curve[i]*0.92)}`;
+  const band=topPath+botPath+' Z';
+  const youAreHere=6;
+  const yPast=line.split('L').slice(0,youAreHere+1).join('L');
+  let futLine=`M ${x(youAreHere)} ${y(curve[youAreHere])}`;
+  for(let i=youAreHere+1;i<curve.length;i++) futLine+=` L ${x(i)} ${y(curve[i])}`;
+  svg.innerHTML=`
+    <path d="${band}" fill="rgba(168,133,74,0.15)" stroke="none"/>
+    <path d="${yPast}" stroke="rgba(168,133,74,1)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="${futLine}" stroke="rgba(168,133,74,0.55)" stroke-width="1.3" fill="none" stroke-dasharray="2 3" stroke-linecap="round"/>
+    <circle cx="${x(youAreHere)}" cy="${y(curve[youAreHere])}" r="3.5" fill="#fff" stroke="rgba(168,133,74,1)" stroke-width="1.6"/>
+    <text x="${x(0)}" y="${H-1}" font-size="7" fill="rgba(20,20,26,0.45)" font-family="JetBrains Mono">2020</text>
+    <text x="${x(youAreHere)-10}" y="${y(curve[youAreHere])-8}" font-size="7" fill="rgba(20,20,26,0.85)" font-family="JetBrains Mono" font-weight="600">2026</text>
+    <text x="${x(curve.length-1)-22}" y="${H-1}" font-size="7" fill="rgba(20,20,26,0.45)" font-family="JetBrains Mono">2028e</text>`;
+}
+
+const empty=document.getElementById('panelEmpty');
+const detail=document.getElementById('panelDetail');
+const close=document.getElementById('panelClose');
+function showPlot(id){
+  const p=PLOTS[id];if(!p)return;
+  document.querySelectorAll('.pin-group').forEach(g=>g.classList.toggle('active',g.dataset.id===id));
+  document.getElementById('dVillage').textContent=p.village;
+  document.getElementById('dTitle').textContent=p.title;
+  document.getElementById('dArea').textContent=p.area;
+  document.getElementById('dZone').textContent=p.zone;
+  document.getElementById('dTp').textContent=p.tp;
+  document.getElementById('dRoad').textContent=p.road;
+  document.getElementById('dTag').textContent=p.tag;
+  document.getElementById('dUpin').textContent=p.upin;
+  document.getElementById('dOld').textContent=p.old;
+  document.getElementById('dMulti').textContent=p.multi;
+  const st=document.getElementById('dStatus');
+  st.textContent=p.status;st.className='status-pill '+(p.statusOk?'ok':'warn');
+  ['dD1','dD2','dD3','dD4'].forEach((id2,i)=>{document.getElementById(id2).querySelector('.v').textContent=p.d[i]});
+  renderGrowth(p.curve);
+  empty.style.display='none';
+  detail.classList.add('active');
+  detail.scrollTop=0;
+}
+function hidePlot(){
+  detail.classList.remove('active');empty.style.display='flex';
+  document.querySelectorAll('.pin-group').forEach(g=>g.classList.remove('active'));
+}
+document.querySelectorAll('.pin-group').forEach(g=>{
+  g.addEventListener('click',()=>showPlot(g.dataset.id));
+  g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showPlot(g.dataset.id)}});
+});
+close.addEventListener('click',hidePlot);
+
+document.querySelectorAll('.chip').forEach(c=>{
+  c.addEventListener('click',()=>{
+    document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));
+    c.classList.add('active');
+    const f=c.dataset.filter;
+    document.querySelectorAll('.pin-group').forEach(g=>{
+      const p=PLOTS[g.dataset.id];
+      const match = f==='all' || p.family===f || (f==='ready' && p.statusOk);
+      g.style.opacity = match?1:0.18;
+      g.style.pointerEvents = match?'auto':'none';
+    });
+    document.querySelectorAll('.tp-zone').forEach(z=>{
+      if(f==='all'||f==='ready'){z.classList.remove('dim');return}
+      z.classList.toggle('dim', z.dataset.family!==f);
+    });
+  });
+});
+
+// Classic 286-plot grid
+(function buildClassic(){
+  const grid=document.getElementById('classicGrid');
+  let html='';
+  for(let i=0;i<288;i++){
+    if(i%18===8 || (i>=72 && i<90) || (i>=180 && i<198)){html+='<div class="classic-plot road"></div>';continue}
+    const r=Math.random();
+    let cls='classic-plot';
+    if(r>0.92) cls+=' lg'; else if(r>0.7) cls+=' med';
+    html+=`<div class="${cls}" title="Plot #${i+1}"></div>`;
+  }
+  grid.innerHTML=html;
+})();
+
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const it=q.parentElement;
+    document.querySelectorAll('.faq-item').forEach(other=>{if(other!==it)other.classList.remove('open')});
+    it.classList.toggle('open');
+  });
+});
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);
+});
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.from('[data-hero]',{y:48,opacity:0,duration:1.3,ease:"power3.out",delay:0.1});
+gsap.from('[data-fade]',{y:24,opacity:0,duration:0.95,ease:"power2.out",stagger:0.12,delay:0.45});
+gsap.from('.hero-meta',{y:24,opacity:0,duration:0.95,ease:"power2.out",delay:1.05});
+gsap.utils.toArray('.title, .thesis-stat, .panel-empty, .classic-info-row, .classic-amenity, .faq-item, .lead-form, .contact-block').forEach(el=>{
+  gsap.from(el,{y:30,opacity:0,duration:0.95,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 85%"}});
+});
+
+gsap.utils.toArray('.thesis-stat .num').forEach(n=>{
+  const txt=n.textContent;
+  const m=txt.match(/^(\d[\d,]*)/);if(!m)return;
+  const target=parseInt(m[1].replace(/,/g,''));
+  const restMatch=txt.match(/<em.*?<\/em>/);
+  const restHTML=restMatch?restMatch[0]:'';
+  const obj={v:0};
+  gsap.to(obj,{
+    v:target,duration:1.7,ease:"power2.out",
+    scrollTrigger:{trigger:n,start:"top 88%"},
+    onUpdate:()=>{n.innerHTML=Math.floor(obj.v).toLocaleString()+restHTML;},
+    onComplete:()=>{n.innerHTML=target.toLocaleString()+restHTML;}
+  });
+});
+</script>
+</body>
+</html>
